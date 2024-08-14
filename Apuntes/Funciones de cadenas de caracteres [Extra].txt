@@ -1,0 +1,15 @@
+		FUNCION DE IDIOMAS
+
+La siguiente libreria nos permitira colocar el idioma que queramos en ciertas partes
+del código o incluso en todo nuestro programa:
+
+		-> #include<locale.h>
+
+El código que nos permitira colocar los caracteres especiales del idioma que queramos,
+por ejemplo en el idioma ESPAÑOL nos permitira usar Ñ , Á , ¿ , etcetera:
+
+		-> setlocale(LC_CTYPE, "Idioma");
+
+En nuestro caso colocaremos el idioma ESPAÑOL o cualquier otro idioma en inglés:
+
+		-> setlocale(LC_CTYPE, "Spanish");

@@ -1,0 +1,18 @@
+		REDONDEO DE NÚMEROS
+
+Cuando hagamos cualquier operacion en nuestro programa de C++
+simplemente debemos agregar antes de imprimir en pantalla la
+siguiente sentencia:
+
+	cout.precision(NUMERO_DE_DECIMALES)
+
+NUMERO_DE_DECIMALES: Esto se refiere a cuantos números deseamos redondear
+en nuestro programa, eso variara segun el programa que hagamos.
+
+Como dije, se escribe antes de imprimir un resultado, así que lo
+haremos de la siguiente manera:
+
+	float VALOR = 2.4567
+
+	cout.precision(2);
+	cout<<"El número es: "<<VALOR<<endl;

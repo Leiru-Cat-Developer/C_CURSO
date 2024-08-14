@@ -1,0 +1,41 @@
+		METODO BURBUJA
+
+Es un sencillo algoritmo de ordenamiento. Funciona revisando
+cada elemento de la lista [ARREGLO NUMEROS O CARACTERES] que va
+a ser ordenada con el siguiente intercambiandolos de posición si
+están en el orden equivocado. Es necesario revisar varias veces
+toda la lista hasta que no se necesiten más intercambios, lo cual
+significa que la lista está ordenada.
+
+Este metodo por ser el más sencillo tambien significa que puede llegar
+a ser el más ineficiente, pues necesita recorrer todo el arreglo
+de manera indefinida hasta que este este ordenado, por eso se pierde
+mucho tiempo durante todo ese proceso.
+
+EJEMPLO:	[] = Numero Seleccionado
+
+	[4] - 5 - 2 - 1 - 3	if(numeroActual>numeroSiguiente) CAMBIO POSISION - else NO CAMBIO Y AVANZO UNA POCISION
+	
+	4 - [5] - 2 - 1 - 3	if(numeroActual>numeroSiguiente) CAMBIO POSISION - else NO CAMBIO Y AVANZO UNA POCISION
+	
+	4 - 2 - [5] - 1 - 3	if(numeroActual>numeroSiguiente) CAMBIO POSISION - else NO CAMBIO Y AVANZO UNA POCISION
+	
+	4 - 2 - 1 - [5] - 3	if(numeroActual>numeroSiguiente) CAMBIO POSISION - else NO CAMBIO Y AVANZO UNA POCISION
+	
+	4 - 2 - 1 - 3 - [5]	if(numeroActual>numeroSiguiente) CAMBIO POSISION - else NO CAMBIO Y AVANZO UNA POCISION
+
+	[4] - 2 - 1 - 3 - 5	if(numeroActual>numeroSiguiente) CAMBIO POSISION - else NO CAMBIO Y AVANZO UNA POCISION
+
+	2 - [4] - 1 - 3 - 5 	if(numeroActual>numeroSiguiente) CAMBIO POSISION - else NO CAMBIO Y AVANZO UNA POCISION
+
+	2 - 1 - [4] - 3 - 5 	if(numeroActual>numeroSiguiente) CAMBIO POSISION - else NO CAMBIO Y AVANZO UNA POCISION
+
+	2 - 1 - 3 - [4] - 5 	if(numeroActual>numeroSiguiente) CAMBIO POSISION - else NO CAMBIO Y AVANZO UNA POCISION
+
+	[2] - 1 - 3 - 4 - 5 	if(numeroActual>numeroSiguiente) CAMBIO POSISION - else NO CAMBIO Y AVANZO UNA POCISION
+
+	1 - [2] - 3 - 4 - 5 	if(numeroActual>numeroSiguiente) CAMBIO POSISION - else NO CAMBIO Y AVANZO UNA POCISION
+
+	1 - 2 - 3 - 4 - 5 -> ARREGLO ORDENADO <-
+
+	

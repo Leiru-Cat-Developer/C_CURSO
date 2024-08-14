@@ -1,0 +1,113 @@
+	FUNCIONES DE CADENAS DE CARACTERES // TODAS LAS FUNCIONES ORIGINALMENTE SON EN MINUSCULAS
+
+1.- STRLEN():	Mide la LONGITUD de una cadena de caracteres,
+		debido a que nos da un número entero al darnos la longitud,
+		debemos declarar otra variable entera para guardar su valor.
+
+Por ejemplo:
+
+	char PALABRA[] = "HOLA";
+	int LONGITUD;
+	
+	LONGITUD = STRLEN(PALABRA);
+
+2.- STRCPY():	COPEA CONTENIDO de una cadena a otra, debemos
+ 		declarar una cadena de mayor o igual contenido
+		para pasar correctamente los valores. La forma de pasar los
+		valores es STRCPY(CADENA_VACIA,CADENA_LLENA);
+
+Por ejemplo:
+	
+	char PALABRA_UNO[] = "HOLA";
+	char PALABRA_DOS[10];
+
+	STRCPY(PALABRA_DOS,PALABRA_UNO);
+
+3.- STRCMP():	COMPARA 2 CADENAS, nos devolvera un valor diferente de 0
+		si las cadenas no son iguales y el número 0 si las cadenas son iguales, está
+		función se ocupa para estructuras condicionales. La forma de
+		comparar las dos cadenas de caracteres se hace de la siguiente
+		forma STRCMP(CADENA_UNO,CADENA_DOS) == 0 'o' != 0. También nos define
+		cual de las palabras es mayor alfabeticamente es decir en el orden de
+		'A','B','C',etcétera . . . Declarandolo de la siguiente manera, colocamos
+		STRCMP(CADENA_UNO,CADENA_DOS) > 0 'o' < 0, tambien la podemos comparar con
+		una cadena ya definida.
+
+Por ejemplo:
+
+	char PALABRA_UNO[] = "HOLA";
+	char PALABRA_DOS[] = "HOLA";
+
+	if(STRCMP(PALABRA_UNO,PALABRA_DOS) == 0)
+	if(STRCMP(PALABRA_UNO,PALABRA_DOS) != 0)
+	if(STRCMP(PALABRA_UNO,PALABRA_DOS) < 0)	MENOR ALFABETICAMENTE [A<B]
+	if(STRCMP(PALABRA_UNO,PALABRA_DOS) > 0) MAYOR ALFABETICAMENTE [A>B]
+	if(STRCMP(PALABRA_UNO,"HOLA") == 0)
+
+4.- STRCAT():	CONCATENA TEXTO con otra cadena de texto existente en una 
+		nueva cadena para crear un seguimiento, un ejemplo
+		para usar esta función es primero copear el texto existente de la primera
+		cadena a la nueva cadena es decir STRCPY(CADENA_NUEVA,CADENA_UNO) y después
+		utilizar la función para concatenar es decir STRCAT(CADENA_NUEVA,CADENA_DOS)
+		e imprimir la cadena nueva en pantalla para mostrar el contenido.
+Por ejemplo:
+
+	char CADENA_UNO[] = "Hola";
+	char CADENA_DOS[] = " y adios";
+	char CADENA_TRES[100];
+	
+	STRCPY(CADENA_TRES,CADENA_UNO);
+	STRCAT(CADENA_TRES,CADENA_DOS);
+	cout<<CADENA_TRES<<endl;
+
+5.- STRREV():	INVIERTE cadenas de caracteres, unicamente debemos colocarlo de la
+		siguiente forma STRREV(CADENA) y despues imprimimos la misma variable
+		para observar el resultado.
+
+	char CADENA_UNO[] = "Hola";
+	STRREV(CADENA_UNO);
+	cout<<CADENA_UNO<<endl;
+
+6.- STRUPR():	CONVIERTE A MAYUSCULAS las cadenas de caracteres por completo, de la
+		siguiente forma STRUPR(CANDENA) y despues imprimimos la misma variable
+		para observar el resultado.
+
+	char CADENA_UNO[] = "hola";
+	STRUPR(CADENA_UNO);
+	cout<<CADENA_UNO<<endl;
+
+7.- STRLWR():	CONVIERTE A MINUSCULAS las cadenas de caracteres por completo, de la
+		siguiente forma STRLWR(CANDENA) y despues imprimimos la misma variable
+		para observar el resultado.
+
+	char CADENA_UNO[] = "HOLA";
+	STRLWR(CADENA_UNO);
+	cout<<CADENA_UNO<<endl;
+
+8.- STRNCMP():	COMPARA SOLO LOS CARACTERES QUE LE INDIQUEMOS, nos devuelve un valor diferente
+		de 0 si la cadena no es la misma y un 0 si la cadena es igual, pero debemos
+		indicarle el número de caracteres que queremos que indique, de la siguiente
+		manera STRNCMP(CADENA,"A",1) o tambien STRNCMP(CADENA_UNO,CADENA_DOS,5).
+	
+	char PALABRA_UNO[] = "Alejandro";
+
+	if(STRCMP(PALABRA_UNO,"A",1) == 0) //Aqui indicamos que compare la letra A
+
+9.- ATOI() - ATOF():	CONVIERTE A NUMEROS ENTEROS las cadenas de caracteres, es decir
+			que si el usuario nos digita un número y nosotros lo guardamos en
+			una cadena, pues este lo podremos guardar en una variable entera
+			de la siguiente manera NUMERO = ATOI(CADENA), es importante declararla
+			de esta manera para guardar el valor en una variable, la funcion ATOF()
+			funciona de la misma manera pero para numeros flotantes.
+
+			/* PARA ESTAS FUNCIONES ES IMPORTANTE USAR LA LIBRERIA stdlib.h*/
+
+	int NUMERO_UNO;
+	float NUMERO_DOS;
+	char CADENA_UNO[] = "123",CADENA_DOS[] = "123.23";
+
+	NUMERO_UNO = ATOI(CADENA_UNO);
+	NUMERO_DOS = ATOF(CADENA_UNO);
+
+	cout<<NUMERO_UNO<<endl;
+	cout<<NUMERO_DOS<<endl;

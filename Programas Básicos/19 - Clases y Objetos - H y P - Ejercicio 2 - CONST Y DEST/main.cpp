@@ -1,0 +1,22 @@
+//CONSTRUCTORES Y DESTRUCTORES DE LAS CLASES DERIVADAS
+#include<iostream>
+#include "ClaseDerivada.h"
+using namespace std;
+
+int main(int argc, char** argv) {
+	ClaseDerivada* OBJ1 = new ClaseDerivada(5,10);
+	
+	cout<<endl<<endl;
+	
+	delete OBJ1;
+	return 0;
+}
+/*
+	EN ESTE ORDEN SE EJECUTAN LOS CONSTRUCTORES Y DESTRUCTORES:
+
+	EL CONSTRUCTOR DE CLASE BASE SE EJECUTA
+	EL CONSTRUCTOR DE CLASE DERIVADA SE EJECUTA
+	
+	EL DESTRUCTOR DE CLASE DERIVADA SE EJECUTA
+	EL DESTRUCTOR DE CLASE BASE SE EJECUTA
+*/

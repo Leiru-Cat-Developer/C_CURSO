@@ -1,0 +1,84 @@
+/*
+	ORDENACIÓN SHELL [ORDENAMIENTO POR INSERCIÓN CON INCREMENTOS DECRECIENTES]
+	
+		CADA ELEMENTO SE COMPARA CON LOS ELEMENTOS CONTIGUOS DE SU IZQUIERDA, UNO TRAS OTRO.
+		SI EL ELEMENTO A INSERTAR ES EL MÁS PEQUEÑO HAY QUE REALIZAR MUCHAS COMPARACIONES
+		ANTES DE COLOCARLO EN SU LUGAR DEFINITIVO.
+		
+		EL ALGORITMO DE SHELL MODIFICA LOS SALTOS CONTIGUOS POR SALTOS DE MAYOR TAMAÑO Y CON
+		ELLO CONSIGUE QUE LA ORDENACIÓN SEA MÁS RÁPIDA.
+		
+		GENERALMENTE, SE TOMA COMO SALTO INICIAL (N/2), SIENDO 'N' EL NÚMERO DE ELEMENTOS.
+		LUEGO EN CADA ITERACIÓN SE REDUCE EL SALTO A LA MITAD, HASTA QUE EL SALTO ES DE
+		TAMAÑO 1.
+		
+		PASOS A SEGUIR:
+		
+		1. SE DIVIDE LA LISTA ORIGINAL EN (N/2) GRUPOS DE DOS, CONSIDERANDO UN INCREMENTO
+		O SALTO ENTRE LOS ELEMENTOS DE (N/2)
+		
+		2. SE CLASIFICA CADA GRUPO POR SEPARADO, COMPARANDO LAS PAREJAS DE ELEMENTOS Y SI NO
+		ESTÁN ORDENADOS SE INTERCAMBIAN
+		
+		3. SE DIVIDE AHORA LA LISTA EN LA MIDAD DE GRUPOS (N/4) CON UN SALTO ENTRE LOS
+		ELEMENTOS TAMBIÉN MITAD (N/4) Y NUEVAMENTE SE CLASIFICA CADA GRUPO POR SEPARADO
+		
+		4. ASÍ SUCESIVAMENTE, SE SIGUE DIVIDIENDO LA LISTA EN LA MITAD DE GRUPOS QUE EN 
+		EL RECORRIDO ANTERIOR CON UN SALTO DECRECIENTE EN LA MITAD QUE EL SALTO ANTERIOR,
+		Y LUEGO CLASIFICANDO CADA GRUPO POR SEPARADO
+		
+		5. EL ALGORITMO TERMINA CUANDO EL TAMAÑO DEL SALTO ES 1
+*/
+#include<iostream>  //LIBRERÍA ESTÁNDAR [LECTURA - SALIDA]
+#include<string.h>  //LIBRERÍA PARA CADENAS
+#include<math.h>    //LIBRERÍA DE MATEMÁTICAS
+#include<stdlib.h>  //LIBRERÍA PARA PAUSAS 1 [SYSTEM("PAUSE")]
+#include<conio.h>   //LIBRERÍA PARA PAUSAS 2 [GETCH()]
+using namespace std;
+//INTERCAMBIO DE NÚMEROS PARA EL ALGORITMO DE SHELL [39 - 44]
+void intercambioDeNumerosAlgoritmoShell(int &x, int &y){
+	int auxiliar = 0;
+	auxiliar = x;
+	x = y;
+	y = auxiliar;
+}
+//ALGORITMO DE SHELL [46 - 66]
+void algoritmoOrdenamientoShell(int arreglo[], int numeroDeElementosDelArrelo){
+	//PARA ESTE ALGORIMOS UTILIZAREMOS UNA FUNCIÓN PARA QUE SEA MÁS SENCILLO
+	//EL ARREGLO PUEDE SER TANTO DE TIPO ENTERO, FLOTANTE O DOBLE
+	int salto = 0, i = 0, j = 0, k = 0;
+	salto = numeroDeElementosDelArrelo/2;
+	while(salto > 0){
+		for(i=salto; i<numeroDeElementosDelArrelo; i++){
+			j = i - salto;
+			while(j >= 0){
+				k = j + salto;
+				if(arreglo[j] <= arreglo[k]){	//PAR DE ELEMENTOS ORDENADOS
+					j = -1;
+				}else{	//PAR DE ELEMENTOS DESORDENADOS
+					intercambioDeNumerosAlgoritmoShell(arreglo[j],arreglo[k]);
+					j -= salto;
+				}
+			}
+		}
+		salto = salto/2;
+	}
+}
+int main(){
+	setlocale(LC_CTYPE, "Spanish");	//CONFIGURACIÓN DE LENGUAJE A ESPAÑOL [´,Ñ,? ... ETC]
+	int arreglo[] = {4,6,1,9,5,10,2,11,19,7};	//ARREGLO DE 10 POCISIONES
+	algoritmoOrdenamientoShell(arreglo,10);		//LLAMAMOS A LA FUNCIÓN DE ORDENAMIENTO Y PASAMOS PARAMETROS
+	//IMPRESIÓN DE DATOS [72 - 80]
+	cout<<"ARREGLO ORDENADO ASCENDENTEMENTE"<<endl<<endl;
+	for(int i=0; i<10; i++){
+		cout<<"POCISIÓN ["<<i<<"]: "<<arreglo[i]<<endl;
+	}
+	cout<<endl;
+	cout<<"ARREGLO ORDENADO DESCENDENTEMENTE"<<endl<<endl;
+	for(int i=9; i>=0; i--){
+		cout<<"POCISIÓN ["<<i<<"]: "<<arreglo[i]<<endl;
+	}
+	cout<<endl;
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,47 @@
+		FUNCIONES
+
+Una funcion realiza una tarea concreta y puede ser diseñada,
+implementada y depurada de manera independiente al resto de código.
+
+Cada función realiza algo en concreto, después podremos llamar
+cada función cuando la necesitamos, esto hace llamado a la
+frase "DIVIDE Y VENCERAS", es decir vamos a poder dividir el problema
+en pequeños problemas que al final resolveran un gran problema.
+
+La sintaxis básica para la definición de una función en C++ es:
+
+TIPO nombre(TIPO Var1, TIPO Var2, ... TIPO VarN){
+	CONJUNTO DE INSTRUCCIONES;
+}
+
+TIPO = El tipo de dato que va a retornar la función
+
+	VOID = No retorna nada
+	INT = Retorna un valor entero
+	FLOAT = Retorna un valor flotante
+
+nombre = Nombre de nuestra función
+
+VarN = Variables que usaremos que vamos a usar durante la función,
+	estás pueden ser de cualquier tipo.
+
+		EJEMPLOS DE FUNCIONES
+
+-> int NumMaximo(int X, int Y) RETORNA ENTEROS
+-> double Intercambio(double x, double y) RETORNA DOUBLE
+-> void Desplegar(float x, float y) NO RETORNA NADA
+
+Como una cuestión de buena forma de programación, el siguiente 
+ordenamiento de instrucciones deberá formar la estructura básica
+alrededor de la cual se consruyan todos tus programas en C++:
+
+	Directivas del procesador [Librerias]
+
+	PROTOTIPOS DE FUNCION
+
+	int Main(){
+		CONJUNTO DE INSTRUCIONES;
+		RETURN valor;
+	}
+
+	DEFINICIONES DE FUNCION;

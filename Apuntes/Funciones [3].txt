@@ -1,0 +1,13 @@
+		PASO POR REFERENCIA
+
+Este metódo se refiere a no pasar números por el orden en el que los pedimos,
+sino por buscar el espacio de memoria en el que esta almacenado el elemento
+que guardamos en la variable.
+
+Se declara de la siguiente manera por poner un ejemplo:
+
+	void Numero(int& x, int& y){}		Los "&" significan >LA DIRECCION DE< y siempre se colocan después del tipo de dato.
+
+Como siempre, debemos colocar su prototipo de funcion, y lo hacemos de la siguiente manera:
+
+	void Numero(int&,int&);		Como puedes apreciar, no necesitamos especificar las variables que usamos.
