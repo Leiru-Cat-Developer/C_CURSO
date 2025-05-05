@@ -12,7 +12,7 @@ int main() {
 	
 	for (int n=1; n<=100; n++) {
 		if (n > 1) {
-			for (int j=1; j<n; j++) {
+			for (int j=1; j<=n; j++) {
 				if (n%j == 0) {
 					contador++;
 				}

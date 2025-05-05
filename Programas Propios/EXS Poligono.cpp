@@ -11,73 +11,75 @@
 
 using namespace std;
 
-//Clases
-class Triangulo{
-	private:
-		int base;
-		int altura;
+class Figura{
 	public:
-		Triangulo(int _base, int _altura): base(_base), altura(_altura){}
-		
-		float area();
-		void imprimirArea();
+		virtual float calcularArea() = 0;	//Metodo Virtual
 };
 
-float Triangulo::area() {
+class Triangulo : public Figura{
+	private:
+		float base;
+		float altura;
+	public:
+		Triangulo(float _base,
+				  float _altura):
+				  					base(_base),
+				  					altura(_altura){}
+		
+		float calcularArea();
+};
+
+float Triangulo::calcularArea() {
 	return (base*altura)/2;
 }
 
-void Triangulo::imprimirArea() {
-	cout<<"El area del triangulo es: "<<area()<<endl;
-}
-
-class Rectangulo{
+class Cuadrado : public Figura{
 	private:
-		int base;
-		int altura;
+		float lado;
 	public:
-		Rectangulo(int _base, int _altura): base(_base), altura(_altura){}
+		Cuadrado(float _lado): lado(_lado){}
 		
-		float area();
-		void imprimirArea();
+		float calcularArea();
 };
 
-float Rectangulo::area() {
-	return (base*altura);
-}
-
-void Rectangulo::imprimirArea() {
-	cout<<"El area del rectangulo es: "<<area()<<endl;
-}
-
-class Cuadrado{
-	private:
-		int lado;
-	public:
-		Cuadrado(int _lado): lado(_lado){}
-		
-		float area();
-		void imprimirArea();
-};
-
-float Cuadrado::area() {
+float Cuadrado::calcularArea() {
 	return (lado*lado);
 }
 
-void Cuadrado::imprimirArea() {
-	cout<<"El area del cuadrado es: "<<area()<<endl;
+class Rectangulo : public Figura{
+	private:
+		float base;
+		float altura;
+	public:
+		Rectangulo(float _base,
+				  float _altura):
+				  					base(_base),
+				  					altura(_altura){}
+		
+		float calcularArea();
+};
+
+float Rectangulo::calcularArea() {
+	return (base*altura);
 }
 
 //Prototipo de funciones
-float calcularArea(class n);
+float areaPoligono(Figura* figura);
 
 int main() {
+	Triangulo t(12,8);
+	Cuadrado c(5);
+	Rectangulo r(12,9);
+	
+	cout<<"El area del triangulo es: "<<areaPoligono(&t)<<endl;
+	cout<<"El area del cuadrado es: "<<areaPoligono(&c)<<endl;
+	cout<<"El area del rectangulo es: "<<areaPoligono(&r)<<endl<<endl;
 	
 	system("pause");
 	return 0;
 }
 
 //Definicion de funciones
-float calcularArea(class n) {
-	
+float areaPoligono(Figura* figura) {
+	return figura->calcularArea();
 }
